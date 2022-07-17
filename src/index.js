@@ -37,8 +37,23 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(expr) {
-    // write your solution here
+function decodeMorse (morseString) {
+     let trimmedMorseString = morseString.trim()
+  let morseLetters = trimmedMorseString.split(' ');
+  // the presence of two '' chars next to each other indicates the space between words
+  let decodedMessage = ''
+  // loop over the morse letters and convert them to the corresponding english letters according to the lookup table
+  for (let i=0; i<morseLetters.length; i++) {
+    if (morseLetters[i] === '') {
+      morseLetters.splice(i, 1)
+      decodedMessage += ' '
+      continue
+    }
+
+    decodedMessage += MORSE_TABLE[morseLetters[i]]
+  }
+
+  return decodedMessage
 }
 
 module.exports = {
