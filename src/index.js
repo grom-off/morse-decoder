@@ -38,15 +38,7 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    return expr
-             .split("   ") // get word code 3 spaces apart
-             .map(word => word
-                           .split(" ") // get character code 1 spaces apart
-                           .map(character => MORSE_TABLE.character.) // decode Morse code character
-                           .join('')
-              )
-              .join(' ') // add spaces between words 
-              .trim()
+    // write your solution here
 }
 
 module.exports = {
