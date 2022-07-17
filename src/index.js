@@ -37,16 +37,16 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
-function decode(expr) {
-   return expr
-    .split('   ')
-    .map(
-      a => a
-        .split(' ')
-        .map(
-          b => ref[b]
-        ).join('')
-    ).join(' ');
+decodeMorse = function( morseCode ) {
+    return morseCode
+             .split("   ") // get word code 3 spaces apart
+             .map(word => word
+                           .split(" ") // get character code 1 spaces apart
+                           .map(character => MORSE_TABLE[character]) // decode Morse code character
+                           .join('')
+              )
+              .join(' ') // add spaces between words 
+              .trim()
 }
 
 module.exports = {
