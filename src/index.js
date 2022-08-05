@@ -38,7 +38,7 @@ const MORSE_TABLE = {
     '**********':  ' ',
 };
 
-function decodeMorse (morseString) {
+function decode (morseString) {
       
   let trimmedMorseString = morseString.trim()
   let morseLetters = trimmedMorseString.match(/.{1,10}/g);
