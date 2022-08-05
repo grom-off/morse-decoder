@@ -10,45 +10,42 @@ const MORSE_TABLE = {
     '0000001010':     'i',
     '0010111111':   'j',
     '0000111011':    'k',
-    '.-..':   'l',
-    '--':     'm',
-    '-.':     'n',
-    '---':    'o',
-    '.--.':   'p',
-    '--.-':   'q',
-    '.-.':    'r',
-    '...':    's',
-    '-':      't',
-    '..-':    'u',
-    '...-':   'v',
-    '.--':    'w',
-    '-..-':   'x',
-    '-.--':   'y',
-    '--..':   'z',
-    '.----':  '1',
-    '..---':  '2',
-    '...--':  '3',
-    '....-':  '4',
-    '.....':  '5',
-    '-....':  '6',
-    '--...':  '7',
-    '---..':  '8',
-    '----.':  '9',
-    '-----':  '0',
+    '0010111010':   'l',
+    '0000001111':     'm',
+    '0000001110':     'n',
+    '0000111111':    'o',
+    '0010111110':   'p',
+    '0011111011':   'q',
+    '0000101110':    'r',
+    '0000101010':    's',
+    '0000000011':      't',
+    '0000101011':    'u',
+    '0010101011':   'v',
+    '0000101111':    'w',
+    '0011101011':   'x',
+    '0011101111':   'y',
+    '0011111010':   'z',
+    '1011111111':  '1',
+    '1010111111':  '2',
+    '1010101111':  '3',
+    '1010101011':  '4',
+    '1010101010':  '5',
+    '1110101010':  '6',
+    '1111101010':  '7',
+    '1111111010':  '8',
+    '1111111110':  '9',
+    '1111111111':  '0',
+    '**********':  ' ',
 };
 
 function decodeMorse (morseString) {
      let trimmedMorseString = morseString.trim()
-  let morseLetters = trimmedMorseString.split('**********');
-  // the presence of two '' chars next to each other indicates the space between words
+  let morseLetters = trimmedMorseString.match(/.{1,10}/g);
+
   let decodedMessage = ''
-  // loop over the morse letters and convert them to the corresponding english letters according to the lookup table
+  
   for (let i=0; i<morseLetters.length; i++) {
-    if (morseLetters[i] === '') {
-      morseLetters.splice(i, 1)
-      decodedMessage += ' '
-      continue
-    }
+    for (let 
 
     decodedMessage += MORSE_TABLE[morseLetters[i]]
   }
