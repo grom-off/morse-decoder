@@ -1,15 +1,15 @@
 const MORSE_TABLE = {
-    '.-':     'a',
-    '-...':   'b',
-    '-.-.':   'c',
-    '-..':    'd',
-    '.':      'e',
-    '..-.':   'f',
-    '--.':    'g',
-    '....':   'h',
-    '..':     'i',
-    '.---':   'j',
-    '-.-':    'k',
+    '0000001011':     'a',
+    '0011101010':   'b',
+    '0011101110':   'c',
+    '0000111010':    'd',
+    '0000000010':      'e',
+    '0010101110':   'f',
+    '0000111110':    'g',
+    '0010101010':   'h',
+    '0000001010':     'i',
+    '0010111111':   'j',
+    '0000111011':    'k',
     '.-..':   'l',
     '--':     'm',
     '-.':     'n',
@@ -39,7 +39,7 @@ const MORSE_TABLE = {
 
 function decodeMorse (morseString) {
      let trimmedMorseString = morseString.trim()
-  let morseLetters = trimmedMorseString.split(' ');
+  let morseLetters = trimmedMorseString.split('**********');
   // the presence of two '' chars next to each other indicates the space between words
   let decodedMessage = ''
   // loop over the morse letters and convert them to the corresponding english letters according to the lookup table
