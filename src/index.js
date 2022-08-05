@@ -39,18 +39,17 @@ const MORSE_TABLE = {
 };
 
 function decodeMorse (morseString) {
-     let trimmedMorseString = morseString.trim()
+      
+  let trimmedMorseString = morseString.trim()
   let morseLetters = trimmedMorseString.match(/.{1,10}/g);
-
-  let decodedMessage = ''
-  
-  for (let i=0; i<morseLetters.length; i++) {
-    for (let 
-
-    decodedMessage += MORSE_TABLE[morseLetters[i]]
+  let decodedMessage = '';
+      
+ for (let i=0; i < morseLetters.length; i++) {
+  for (key in MORSE_TABLE)  {
+   if (key === morseLetters[i]) {decodedMessage += MORSE_TABLE[key]};
+   }
   }
-
-  return decodedMessage
+  return decodedMessage;
 }
 
 module.exports = {
